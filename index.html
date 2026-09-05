@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EDF0E9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131711" media="(prefers-color-scheme: dark)">
+<meta name="description" content="木藝與玉石收藏的隨身筆記：記藏家、拍照、記開價，一鍵導航。">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<title>藏家手札</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="藏家手札">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#E7ECE3;
+  --surface:rgba(253,252,247,.88);
+  --surface-2:#F3F6EE;
+  --veil:rgba(231,236,227,.85);
+  --grain-a:rgba(120,78,40,.030);
+  --grain-b:rgba(120,78,40,.015);
+  --jade-grad:linear-gradient(158deg,#3E9A73,#25704F);
+  --seal-grad:radial-gradient(120% 120% at 28% 18%,#D6E8DA,#8DBBA0 58%,#649881);
+  --seal-ink:#153524;
+  --stone:
+    radial-gradient(34% 24% at 52% 30%, rgba(255,255,255,.42), transparent 72%),
+    radial-gradient(30% 22% at 22% 44%, rgba(255,255,255,.48), transparent 72%),
+    radial-gradient(56% 38% at 8% 3%,   rgba(112,172,140,.44), transparent 66%),
+    radial-gradient(48% 32% at 94% 1%,  rgba(186,210,174,.55), transparent 64%),
+    radial-gradient(64% 42% at 86% 34%, rgba(134,186,158,.38), transparent 68%),
+    radial-gradient(52% 36% at 0% 58%,  rgba(168,197,161,.44), transparent 66%),
+    radial-gradient(72% 46% at 42% 90%, rgba(108,162,136,.36), transparent 70%),
+    repeating-linear-gradient(114deg, rgba(255,255,255,.07) 0 2px, transparent 2px 13px),
+    repeating-linear-gradient(97deg,  rgba(255,255,255,.05) 0 5px, transparent 5px 41px);
+  --ink:#1B211C;
+  --ink-2:#5C6659;
+  --ink-3:#8A9385;
+  --line:#D6DDCF;
+  --line-soft:#E4EADD;
+  --jade:#2E7D5E;
+  --jade-ink:#1F5C44;
+  --jade-soft:#DBEBE0;
+  --on-jade:#FFFFFF;
+  --wood:#8A5A2E;
+  --wood-soft:#F0E4D6;
+  --danger:#A63B2E;
+  --danger-soft:#F6E0DC;
+  --amber:#9A6C18;
+  --amber-soft:#F5E9CE;
+  --shadow-sm:0 1px 2px rgba(27,33,28,.07);
+  --shadow-md:0 2px 6px rgba(27,33,28,.07), 0 14px 30px rgba(27,33,28,.07);
+  --r-s:10px; --r-m:14px; --r-l:20px;
+  --wood-grain:
+    repeating-linear-gradient(178.4deg, var(--grain-a) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(178.4deg, var(--grain-b) 0 3px, transparent 3px 26px);
+  --serif:"Noto Serif TC", "Songti TC", serif;
+  --sans:"Noto Sans TC", -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --bg:#131711;
+    --surface:rgba(28,33,25,.86);
+    --surface-2:#232920;
+    --veil:rgba(19,23,17,.86);
+    --grain-a:rgba(214,160,102,.032); --grain-b:rgba(214,160,102,.015);
+    --jade-grad:linear-gradient(158deg,#6BC99B,#3E9A73);
+    --seal-grad:radial-gradient(120% 120% at 28% 18%,#31543F,#1E3A2B 62%,#16291F);
+    --seal-ink:#9FD8B8;
+    --stone:
+      radial-gradient(36% 24% at 58% 18%, rgba(148,196,170,.16), transparent 72%),
+      radial-gradient(56% 38% at 8% 3%,   rgba(46,100,73,.62), transparent 66%),
+      radial-gradient(48% 32% at 94% 1%,  rgba(34,66,48,.66), transparent 64%),
+      radial-gradient(64% 42% at 86% 34%, rgba(48,102,75,.46), transparent 68%),
+      radial-gradient(52% 36% at 0% 58%,  rgba(38,78,57,.54), transparent 66%),
+      radial-gradient(72% 46% at 42% 90%, rgba(30,70,50,.50), transparent 70%),
+      repeating-linear-gradient(114deg, rgba(255,255,255,.035) 0 2px, transparent 2px 13px),
+      repeating-linear-gradient(97deg,  rgba(255,255,255,.022) 0 5px, transparent 5px 41px);
+    --ink:#E9EEE3;
+    --ink-2:#A3AE9C;
+    --ink-3:#7B856F;
+    --line:#333B2E;
+    --line-soft:#2A3126;
+    --jade:#61C193;
+    --jade-ink:#8FD9B4;
+    --jade-soft:#1D3729;
+    --on-jade:#0F1A14;
+    --wood:#D6A066;
+    --wood-soft:#3A2C1D;
+    --danger:#E28275;
+    --danger-soft:#3C231E;
+    --amber:#D9AE5E;
+    --amber-soft:#382E19;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+    --shadow-md:0 2px 6px rgba(0,0,0,.35), 0 14px 30px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#131711; --surface:rgba(28,33,25,.86); --surface-2:#232920;
+  --veil:rgba(19,23,17,.86);
+  --grain-a:rgba(214,160,102,.032); --grain-b:rgba(214,160,102,.015);
+  --jade-grad:linear-gradient(158deg,#6BC99B,#3E9A73);
+  --seal-grad:radial-gradient(120% 120% at 28% 18%,#31543F,#1E3A2B 62%,#16291F);
+  --seal-ink:#9FD8B8;
+  --stone:
+    radial-gradient(36% 24% at 58% 18%, rgba(148,196,170,.16), transparent 72%),
+    radial-gradient(56% 38% at 8% 3%,   rgba(46,100,73,.62), transparent 66%),
+    radial-gradient(48% 32% at 94% 1%,  rgba(34,66,48,.66), transparent 64%),
+    radial-gradient(64% 42% at 86% 34%, rgba(48,102,75,.46), transparent 68%),
+    radial-gradient(52% 36% at 0% 58%,  rgba(38,78,57,.54), transparent 66%),
+    radial-gradient(72% 46% at 42% 90%, rgba(30,70,50,.50), transparent 70%),
+    repeating-linear-gradient(114deg, rgba(255,255,255,.035) 0 2px, transparent 2px 13px),
+    repeating-linear-gradient(97deg,  rgba(255,255,255,.022) 0 5px, transparent 5px 41px);
+  --ink:#E9EEE3; --ink-2:#A3AE9C; --ink-3:#7B856F;
+  --line:#333B2E; --line-soft:#2A3126;
+  --jade:#61C193; --jade-ink:#8FD9B4; --jade-soft:#1D3729; --on-jade:#0F1A14;
+  --wood:#D6A066; --wood-soft:#3A2C1D;
+  --danger:#E28275; --danger-soft:#3C231E;
+  --amber:#D9AE5E; --amber-soft:#382E19;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 2px 6px rgba(0,0,0,.35), 0 14px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+body{
+  margin:0; background:var(--bg); color:var(--ink); position:relative;
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-text-size-adjust:100%;
+}
+/* 玉石底：整片雲絮暈染，固定在畫面上不隨捲動跑 */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:var(--stone);
+}
+button,input,textarea,select{font:inherit; color:inherit}
+a{color:var(--jade-ink)}
+h1,h2,h3{font-family:var(--serif); text-wrap:balance; margin:0}
+
+/* ---------- shell ---------- */
+.app{max-width:760px; margin:0 auto; min-height:100dvh; display:flex; flex-direction:column;
+     position:relative; z-index:1}
+.topbar{
+  position:sticky; top:0; z-index:30;
+  display:flex; align-items:center; gap:10px;
+  padding:14px 16px 12px; background:var(--veil);
+  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.grow{flex:1; min-width:0}
+.brand{display:flex; align-items:baseline; gap:10px}
+.brand h1{font-size:23px; font-weight:700; letter-spacing:.04em}
+.brand .sub{font-size:12px; color:var(--ink-3); letter-spacing:.18em}
+.crumb{font-size:12px; letter-spacing:.16em; color:var(--ink-3); text-transform:uppercase}
+.ttl{font-family:var(--serif); font-size:21px; font-weight:700; overflow:hidden;
+     text-overflow:ellipsis; white-space:nowrap}
+.iconbtn{
+  flex:none; width:44px; height:44px; border-radius:50%; border:1px solid var(--line);
+  background:var(--surface); display:grid; place-items:center; cursor:pointer;
+  font-size:19px; line-height:1; box-shadow:var(--shadow-sm);
+}
+.iconbtn:active{transform:scale(.94)}
+main{flex:1; padding:18px 16px 132px; display:flex; flex-direction:column; gap:18px}
+
+/* ---------- generic ---------- */
+.card{background-color:var(--surface); background-image:var(--wood-grain);
+      border:1px solid var(--line-soft); border-radius:var(--r-l); box-shadow:var(--shadow-sm)}
+.muted{color:var(--ink-2)}
+.tiny{font-size:13px}
+.eyebrow{font-size:11.5px; letter-spacing:.2em; color:var(--ink-3); text-transform:uppercase;
+         font-weight:500}
+.price{font-family:var(--mono); font-variant-numeric:tabular-nums; font-weight:600;
+       color:var(--wood); letter-spacing:-.01em}
+.row{display:flex; align-items:center; gap:10px}
+.stack{display:flex; flex-direction:column; gap:14px}
+.empty{padding:44px 22px; text-align:center; color:var(--ink-2); display:grid; gap:8px}
+.empty .mark{font-size:34px}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height:52px; padding:0 20px; border-radius:var(--r-m); border:1px solid var(--line);
+  background:var(--surface); font-weight:500; cursor:pointer; box-shadow:var(--shadow-sm);
+}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.42; cursor:not-allowed; box-shadow:none}
+.btn.primary{background:var(--jade-grad); border-color:transparent; color:var(--on-jade);
+             font-weight:700}
+.btn.ghost{background:transparent; box-shadow:none}
+.btn.danger{color:var(--danger); border-color:var(--danger-soft); background:var(--danger-soft);
+            box-shadow:none}
+.btn.wide{width:100%}
+.btn:focus-visible,.iconbtn:focus-visible,input:focus-visible,textarea:focus-visible,
+select:focus-visible,.tap:focus-visible{outline:3px solid var(--jade); outline-offset:2px}
+
+.fab{
+  position:sticky; bottom:18px; align-self:center; z-index:20;
+  min-height:58px; padding:0 26px; border-radius:999px; border:none;
+  background:var(--jade-grad); color:var(--on-jade); font-weight:700; font-size:17px;
+  box-shadow:0 8px 24px rgba(46,125,94,.34); cursor:pointer;
+  display:inline-flex; align-items:center; gap:9px;
+}
+
+/* ---------- search + stats ---------- */
+.search{position:relative}
+.search input{
+  width:100%; min-height:52px; padding:0 16px 0 46px; border-radius:var(--r-m);
+  border:1px solid var(--line); background:var(--surface); box-shadow:var(--shadow-sm);
+}
+.search .ico{position:absolute; left:16px; top:50%; transform:translateY(-50%);
+             color:var(--ink-3); font-size:16px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; overflow:hidden;
+       background:var(--line-soft); border:1px solid var(--line-soft); border-radius:var(--r-l)}
+.stats div{background-color:var(--surface); background-image:var(--wood-grain);
+            padding:14px 10px; text-align:center}
+.stats b{display:block; font-family:var(--mono); font-size:20px; font-weight:600;
+         font-variant-numeric:tabular-nums}
+.stats span{font-size:12px; color:var(--ink-3); letter-spacing:.08em}
+
+/* ---------- collector list ---------- */
+.tap{display:block; width:100%; text-align:left; cursor:pointer;
+     background-color:var(--surface); background-image:var(--wood-grain);
+     border:1px solid var(--line-soft); border-radius:var(--r-l); padding:16px 18px;
+     box-shadow:var(--shadow-sm); color:inherit}
+.tap:active{background:var(--surface-2)}
+.clist{display:flex; flex-direction:column; gap:12px}
+.citem{display:flex; gap:14px; align-items:flex-start}
+.seal{
+  flex:none; width:50px; height:50px; border-radius:13px; display:grid; place-items:center;
+  background:var(--seal-grad); color:var(--seal-ink); font-family:var(--serif);
+  font-size:23px; font-weight:700;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.42), inset 0 -2px 6px rgba(0,0,0,.10);
+}
+.citem .name{font-family:var(--serif); font-size:19px; font-weight:700; line-height:1.35}
+.citem .place{font-size:14.5px; color:var(--ink-2); margin-top:2px;
+              display:flex; gap:6px; align-items:flex-start}
+.citem .meta{margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+.pill{font-size:12.5px; padding:3px 10px; border-radius:999px; background:var(--surface-2);
+      border:1px solid var(--line-soft); color:var(--ink-2); white-space:nowrap}
+.pill.jade{background:var(--jade-soft); border-color:transparent; color:var(--jade-ink);
+           font-weight:500}
+.pill.wood{background:var(--wood-soft); border-color:transparent; color:var(--wood);
+           font-weight:500}
+.pill.amber{background:var(--amber-soft); border-color:transparent; color:var(--amber);
+            font-weight:500}
+.pill.grey{opacity:.75}
+
+/* ---------- collector detail ---------- */
+.sheet-head{padding:20px 18px 18px; display:grid; gap:12px}
+.sheet-head .name{font-family:var(--serif); font-size:26px; font-weight:700; line-height:1.3}
+.kv{display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:15.5px}
+.kv dt{color:var(--ink-3); font-size:13px; letter-spacing:.06em; padding-top:2px}
+.kv dd{margin:0; color:var(--ink); overflow-wrap:anywhere}
+.actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 18px 18px}
+.actions .btn{padding:0 12px}
+.actions .btn.solo{grid-column:1 / -1}
+.section-title{display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+               padding:0 2px}
+.section-title h2{font-size:18px; font-weight:700}
+
+/* ---------- item cards ---------- */
+.igrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px}
+.icard{
+  background-color:var(--surface); background-image:var(--wood-grain);
+  border:1px solid var(--line-soft); border-radius:var(--r-m);
+  overflow:hidden; cursor:pointer; text-align:left; padding:0; color:inherit;
+  box-shadow:var(--shadow-sm); display:flex; flex-direction:column;
+}
+.icard:active{transform:scale(.985)}
+.thumb{aspect-ratio:1/1; position:relative; display:grid; place-items:center;
+       color:var(--ink-3); font-size:26px;
+       background-color:var(--surface-2); background-image:var(--wood-grain)}
+.thumb img{width:100%; height:100%; object-fit:cover; display:block}
+.thumb .count{position:absolute; right:8px; bottom:8px; background:rgba(0,0,0,.62);
+              color:#fff; font-size:12px; padding:2px 8px; border-radius:999px;
+              font-family:var(--mono)}
+.icard .body{padding:11px 12px 13px; display:grid; gap:5px}
+.icard .nm{font-family:var(--serif); font-weight:700; font-size:16px; line-height:1.4;
+           overflow-wrap:anywhere}
+.icard .pr{font-size:15px}
+
+/* ---------- item detail ---------- */
+.photo-block{display:grid; gap:0; border:1px solid var(--line-soft); border-radius:var(--r-m);
+             overflow:hidden; background-color:var(--surface);
+             background-image:var(--wood-grain); box-shadow:var(--shadow-sm)}
+.photo-block img{width:100%; display:block; background:var(--surface-2); cursor:zoom-in}
+.photo-note{display:flex; gap:10px; align-items:flex-start; padding:12px 14px;
+            border-top:1px solid var(--line-soft)}
+.photo-note .txt{flex:1; font-size:15px; color:var(--ink-2); min-height:24px;
+                 overflow-wrap:anywhere}
+.photo-note .txt.filled{color:var(--ink)}
+.linkbtn{background:none; border:none; padding:6px 8px; margin:-6px -8px; color:var(--jade-ink);
+         font-size:14px; font-weight:500; cursor:pointer; white-space:nowrap}
+.big-note{padding:16px 18px; font-size:16px; line-height:1.75; overflow-wrap:anywhere;
+          white-space:pre-wrap}
+.pricebar{display:flex; align-items:baseline; gap:10px; padding:16px 18px;
+          border-bottom:1px solid var(--line-soft)}
+.pricebar .price{font-size:27px}
+
+/* ---------- overlays ---------- */
+.scrim{position:fixed; inset:0; background:rgba(16,22,17,.55); z-index:90;
+       display:flex; align-items:flex-end; justify-content:center;
+       animation:fade .18s ease}
+.modal{
+  width:100%; max-width:760px; max-height:92dvh; overflow-y:auto;
+  background-color:var(--bg); background-image:var(--stone);
+  border-radius:22px 22px 0 0; padding:20px 18px calc(22px + env(safe-area-inset-bottom));
+  animation:rise .22s cubic-bezier(.2,.8,.3,1); display:grid; gap:16px;
+}
+.modal h2{font-size:20px}
+.field{display:grid; gap:6px}
+.field label{font-size:13.5px; color:var(--ink-2); font-weight:500; letter-spacing:.03em}
+.field input,.field textarea,.field select{
+  width:100%; min-height:52px; padding:13px 14px; border-radius:var(--r-m);
+  border:1px solid var(--line); background:var(--surface);
+}
+.field textarea{min-height:104px; resize:vertical; line-height:1.6}
+.field .hint{font-size:12.5px; color:var(--ink-3)}
+.chips{display:flex; flex-wrap:wrap; gap:8px}
+.chip{padding:10px 16px; border-radius:999px; border:1px solid var(--line);
+      background:var(--surface); cursor:pointer; font-size:15px}
+.chip[aria-pressed="true"]{background:var(--jade); border-color:var(--jade);
+                           color:var(--on-jade); font-weight:600}
+.modal-actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:2px}
+.viewer{position:fixed; inset:0; background:#0B0F0C; z-index:95; display:grid;
+        place-items:center; animation:fade .18s ease}
+.viewer img{max-width:100%; max-height:100dvh; object-fit:contain}
+.viewer .close{position:absolute; top:calc(14px + env(safe-area-inset-top)); right:14px;
+               background:rgba(255,255,255,.16); color:#fff; border:none; width:46px;
+               height:46px; border-radius:50%; font-size:20px; cursor:pointer}
+.toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%); z-index:99;
+       background:var(--ink); color:var(--bg); padding:12px 20px; border-radius:999px;
+       font-size:15px; box-shadow:var(--shadow-md); animation:rise .2s ease; max-width:88vw;
+       text-align:center}
+.banner{display:flex; gap:12px; align-items:flex-start; padding:14px 16px;
+        background:var(--jade-soft); border-radius:var(--r-m); font-size:14.5px;
+        color:var(--jade-ink); line-height:1.6}
+.banner .x{margin-left:auto; background:none; border:none; color:inherit; font-size:18px;
+           cursor:pointer; padding:0 4px; line-height:1}
+.demo-tag{font-size:11px; letter-spacing:.14em; color:var(--amber); background:var(--amber-soft);
+          padding:2px 8px; border-radius:5px; font-weight:600}
+@keyframes rise{from{transform:translateY(14px); opacity:0} to{transform:none; opacity:1}}
+@keyframes fade{from{opacity:0} to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important}
+}
+@media (min-width:620px){
+  .scrim{align-items:center}
+  .modal{border-radius:22px; max-width:560px; padding:24px}
+}
+</style>
+<style>
+/* 獨立部署版：讓出瀏海與 home indicator 的安全區 */
+.topbar{padding-top:calc(14px + env(safe-area-inset-top))}
+main{padding-bottom:calc(132px + env(safe-area-inset-bottom))}
+body{padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar" id="topbar"></header>
+  <main id="view"></main>
+</div>
+<div id="layer"></div>
+<input type="file" id="picker" accept="image/*" multiple hidden>
+<input type="file" id="restorer" accept="application/json,.json" hidden>
+
+<script>
+(() => {
+"use strict";
+
+/* ===================== 儲存層：IndexedDB（照片與資料） ===================== */
+const DB_NAME = "cangjia", DB_VER = 1;
+let _dbp = null;
+function openDB(){
+  if (_dbp) return _dbp;
+  _dbp = new Promise((res, rej) => {
+    const r = indexedDB.open(DB_NAME, DB_VER);
+    r.onupgradeneeded = () => {
+      const d = r.result;
+      if (!d.objectStoreNames.contains("kv")) d.createObjectStore("kv");
+      if (!d.objectStoreNames.contains("photos")) d.createObjectStore("photos");
+    };
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+  return _dbp;
+}
+async function idbGet(store, key){
+  const d = await openDB();
+  return new Promise((res, rej) => {
+    const q = d.transaction(store, "readonly").objectStore(store).get(key);
+    q.onsuccess = () => res(q.result); q.onerror = () => rej(q.error);
+  });
+}
+async function idbSet(store, key, val){
+  const d = await openDB();
+  return new Promise((res, rej) => {
+    const t = d.transaction(store, "readwrite");
+    t.objectStore(store).put(val, key);
+    t.oncomplete = () => res(); t.onerror = () => rej(t.error);
+  });
+}
+async function idbDel(store, key){
+  const d = await openDB();
+  return new Promise((res, rej) => {
+    const t = d.transaction(store, "readwrite");
+    t.objectStore(store).delete(key);
+    t.oncomplete = () => res(); t.onerror = () => rej(t.error);
+  });
+}
+async function idbAllPhotos(){
+  const d = await openDB();
+  return new Promise((res, rej) => {
+    const out = {};
+    const t = d.transaction("photos", "readonly").objectStore("photos").openCursor();
+    t.onsuccess = e => {
+      const c = e.target.result;
+      if (!c) return res(out);
+      out[c.key] = c.value; c.continue();
+    };
+    t.onerror = () => rej(t.error);
+  });
+}
+
+/* ===================== 資料 ===================== */
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const STATUS = [
+  { k:"want",  label:"想收",   cls:"jade"  },
+  { k:"talk",  label:"議價中", cls:"amber" },
+  { k:"got",   label:"已收",   cls:"wood"  },
+  { k:"pass",  label:"放棄",   cls:"grey"  },
+];
+const statusOf = k => STATUS.find(s => s.k === k) || STATUS[0];
+
+let state = { collectors: [], items: [], hideTip: false };
+let saveTimer = null;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    idbSet("kv", "state", JSON.parse(JSON.stringify(state)))
+      .catch(() => toast("資料存不進去，請確認手機還有空間"));
+  }, 120);
+}
+
+function demoData(){
+  const c1 = uid(), c2 = uid();
+  return {
+    hideTip: false,
+    collectors: [
+      { id:c1, demo:true, name:"周老闆", place:"埔里・老料行",
+        address:"南投縣埔里鎮中山路三段", phone:"", note:"週三公休。倉庫在後面，要先打電話。",
+        lat:null, lng:null, createdAt:Date.now() },
+      { id:c2, demo:true, name:"林師傅", place:"建國玉市 3 號攤",
+        address:"台北市大安區建國南路二段", phone:"", note:"只有週六日擺攤，早上九點到中午人最少。",
+        lat:null, lng:null, createdAt:Date.now() },
+    ],
+    items: [
+      { id:uid(), demo:true, collectorId:c1, name:"台灣肖楠瘤 花瓶料", price:45000,
+        status:"talk", note:"油線漂亮，底部有一條裂，開價可以再談。", photos:[],
+        createdAt:Date.now() },
+      { id:uid(), demo:true, collectorId:c1, name:"檜木 老料板", price:12000,
+        status:"want", note:"味道很正，尺寸 90×30×5。", photos:[], createdAt:Date.now() },
+      { id:uid(), demo:true, collectorId:c2, name:"和田白玉 平安扣", price:8800,
+        status:"got", note:"燈下看棉很少，已經收了。", photos:[], createdAt:Date.now() },
+    ],
+  };
+}
+
+async function load(){
+  try {
+    const s = await idbGet("kv", "state");
+    if (s && Array.isArray(s.collectors)) {
+      state = Object.assign({ collectors:[], items:[], hideTip:false }, s);
+      return;
+    }
+  } catch (e) {
+    setTimeout(() => toast("這個瀏覽器不讓網頁存資料，記的東西關掉就會不見"), 800);
+  }
+  state = demoData();
+  save();
+}
+
+/* ===================== 小工具 ===================== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
+  ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+const money = n => (n === "" || n === null || n === undefined || isNaN(n))
+  ? "未記價" : "NT$ " + Number(n).toLocaleString("zh-TW");
+const itemsOf = cid => state.items.filter(i => i.collectorId === cid);
+const collectorOf = id => state.collectors.find(c => c.id === id);
+const itemOf = id => state.items.find(i => i.id === id);
+
+function toast(msg){
+  const t = document.createElement("div");
+  t.className = "toast"; t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2600);
+}
+
+/* 照片壓縮：長邊 1400px、JPEG 0.72，一張大約 200KB 上下 */
+function compress(file){
+  return new Promise((res, rej) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const max = 1400, s = Math.min(1, max / Math.max(img.width, img.height));
+      const w = Math.max(1, Math.round(img.width * s));
+      const h = Math.max(1, Math.round(img.height * s));
+      const cv = document.createElement("canvas");
+      cv.width = w; cv.height = h;
+      cv.getContext("2d").drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      try { res(cv.toDataURL("image/jpeg", 0.72)); } catch (e) { rej(e); }
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); rej(new Error("bad image")); };
+    img.src = url;
+  });
+}
+
+/* Google 地圖：導航與查看，都不需要金鑰 */
+function mapTarget(c){
+  if (c.lat != null && c.lng != null) return c.lat + "," + c.lng;
+  return c.address || c.place || c.name;
+}
+const mapNav  = c => "https://www.google.com/maps/dir/?api=1&destination=" + encodeURIComponent(mapTarget(c));
+const mapView = c => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(mapTarget(c));
+function openUrl(u){ window.open(u, "_blank", "noopener"); }
+
+/* ===================== 路由 ===================== */
+let route = { name:"home" };
+let query = "";
+const photoCache = new Map();
+
+function go(r, push = true){
+  route = r;
+  if (push) { try { history.pushState({ r }, ""); } catch (e) {} }
+  render();
+  window.scrollTo(0, 0);
+}
+window.addEventListener("popstate", e => {
+  const r = e.state && e.state.r;
+  route = r || { name:"home" };
+  render();
+});
+
+/* ===================== 版面 ===================== */
+function render(){
+  if (route.name === "collector" && !collectorOf(route.id)) route = { name:"home" };
+  if (route.name === "item" && !itemOf(route.id)) route = { name:"home" };
+  $("#topbar").innerHTML = topbarHTML();
+  $("#view").innerHTML = viewHTML();
+  hydratePhotos();
+}
+
+function topbarHTML(){
+  if (route.name === "home") return `
+    <div class="grow brand">
+      <h1>藏家手札</h1><span class="sub">木・玉</span>
+    </div>
+    <button class="iconbtn" data-act="settings" aria-label="設定與備份">⚙</button>`;
+  if (route.name === "settings") return `
+    <button class="iconbtn" data-act="back" aria-label="返回">←</button>
+    <div class="grow"><div class="crumb">工具</div><div class="ttl">設定與備份</div></div>`;
+  if (route.name === "collector") {
+    const c = collectorOf(route.id);
+    return `
+    <button class="iconbtn" data-act="back" aria-label="返回">←</button>
+    <div class="grow"><div class="crumb">藏家</div><div class="ttl">${esc(c.name)}</div></div>
+    <button class="iconbtn" data-act="edit-collector" aria-label="編輯藏家">✎</button>`;
+  }
+  const it = itemOf(route.id), c = collectorOf(it.collectorId);
+  return `
+    <button class="iconbtn" data-act="back" aria-label="返回">←</button>
+    <div class="grow"><div class="crumb">${esc(c ? c.name : "藏品")}</div>
+      <div class="ttl">${esc(it.name || "未命名藏品")}</div></div>
+    <button class="iconbtn" data-act="edit-item" aria-label="編輯藏品">✎</button>`;
+}
+
+function viewHTML(){
+  if (route.name === "home") return homeHTML();
+  if (route.name === "settings") return settingsHTML();
+  if (route.name === "collector") return collectorHTML(collectorOf(route.id));
+  return itemHTML(itemOf(route.id));
+}
+
+/* ---------- 首頁 ---------- */
+function homeHTML(){
+  const q = query.trim().toLowerCase();
+  const list = state.collectors
+    .map(c => {
+      const its = itemsOf(c.id);
+      const hit = q ? its.filter(i => (i.name || "").toLowerCase().includes(q)) : [];
+      const self = !q || [c.name, c.place, c.address, c.note]
+        .some(v => (v || "").toLowerCase().includes(q));
+      return { c, its, hit, show: self || hit.length > 0 };
+    })
+    .filter(x => x.show)
+    .sort((a, b) => b.c.createdAt - a.c.createdAt);
+
+  const totalGot = state.items
+    .filter(i => i.status === "got" && Number(i.price) > 0)
+    .reduce((s, i) => s + Number(i.price), 0);
+
+  const tip = state.hideTip ? "" : `
+    <div class="banner">
+      <span>📱</span>
+      <div><b>放到手機桌面</b>，用起來就像一個 App：<br>
+        iPhone 用 Safari 開 → 分享鍵 <b>⌷</b> → 加入主畫面。<br>
+        Android 用 Chrome 開 → 右上 <b>⋮</b> → 加到主畫面。</div>
+      <button class="x" data-act="hide-tip" aria-label="不再顯示">✕</button>
+    </div>`;
+
+  const cards = list.length ? `<div class="clist">${list.map(({ c, its, hit }) => {
+    const sum = its.filter(i => Number(i.price) > 0)
+      .reduce((s, i) => s + Number(i.price), 0);
+    return `
+    <button class="tap" data-act="open-collector" data-id="${c.id}">
+      <div class="citem">
+        <div class="seal">${esc((c.name || "?").slice(0, 1))}</div>
+        <div class="grow">
+          <div class="name">${esc(c.name)}${c.demo ? ' <span class="demo-tag">示範</span>' : ""}</div>
+          <div class="place">${c.place || c.address
+            ? `<span>📍</span><span>${esc(c.place || c.address)}</span>` : `<span class="muted">尚未填地點</span>`}</div>
+          <div class="meta">
+            <span class="pill jade">${its.length} 件藏品</span>
+            ${sum > 0 ? `<span class="pill wood">開價合計 ${esc(money(sum))}</span>` : ""}
+            ${hit.length ? `<span class="pill">含「${esc(hit[0].name)}」${hit.length > 1 ? " 等 " + hit.length + " 件" : ""}</span>` : ""}
+          </div>
+        </div>
+      </div>
+    </button>`;
+  }).join("")}</div>` : `
+    <div class="card empty">
+      <div class="mark">🪵</div>
+      <div><b>${q ? "找不到符合的藏家" : "還沒有記錄任何藏家"}</b></div>
+      <div class="tiny">${q ? "換個字再找找看" : "按下面的「＋ 新增藏家」開始第一筆"}</div>
+    </div>`;
+
+  return `
+    ${tip}
+    <div class="search">
+      <span class="ico">🔍</span>
+      <input id="q" type="search" placeholder="找藏家、地點或藏品" value="${esc(query)}"
+             autocomplete="off" enterkeyhint="search">
+    </div>
+    <div class="stats">
+      <div><b>${state.collectors.length}</b><span>藏家</span></div>
+      <div><b>${state.items.length}</b><span>藏品</span></div>
+      <div><b>${totalGot ? Number(totalGot).toLocaleString("zh-TW") : "—"}</b><span>已收金額</span></div>
+    </div>
+    ${cards}
+    <button class="fab" data-act="new-collector">＋ 新增藏家</button>`;
+}
+
+/* ---------- 藏家頁 ---------- */
+function collectorHTML(c){
+  const its = itemsOf(c.id).sort((a, b) => b.createdAt - a.createdAt);
+  const sum = its.filter(i => Number(i.price) > 0).reduce((s, i) => s + Number(i.price), 0);
+  const hasPlace = !!(c.address || c.place || c.name);
+
+  const grid = its.length ? `<div class="igrid">${its.map(i => {
+    const st = statusOf(i.status), first = i.photos && i.photos[0];
+    return `
+    <button class="icard" data-act="open-item" data-id="${i.id}">
+      <div class="thumb">
+        ${first ? `<img data-photo="${first.id}" alt="${esc(i.name)}">` : "🖼"}
+        ${i.photos && i.photos.length > 1 ? `<span class="count">${i.photos.length}</span>` : ""}
+      </div>
+      <div class="body">
+        <div class="nm">${esc(i.name || "未命名")}</div>
+        <div class="pr price">${esc(money(i.price))}</div>
+        <div><span class="pill ${st.cls}">${st.label}</span></div>
+      </div>
+    </button>`;
+  }).join("")}</div>` : `
+    <div class="card empty">
+      <div class="mark">📷</div>
+      <div><b>還沒拍到東西</b></div>
+      <div class="tiny">按下面的「＋ 拍照記一筆」，把看到的料存起來</div>
+    </div>`;
+
+  return `
+    <section class="card">
+      <div class="sheet-head">
+        <div>
+          <div class="eyebrow">藏家</div>
+          <div class="name">${esc(c.name)}</div>
+        </div>
+        <dl class="kv">
+          ${c.place ? `<dt>地點</dt><dd>${esc(c.place)}</dd>` : ""}
+          ${c.address ? `<dt>地址</dt><dd>${esc(c.address)}</dd>` : ""}
+          ${c.phone ? `<dt>電話</dt><dd><a href="tel:${esc(c.phone)}">${esc(c.phone)}</a></dd>` : ""}
+          ${(c.lat != null) ? `<dt>座標</dt><dd>${esc(c.lat)}, ${esc(c.lng)}</dd>` : ""}
+          ${c.note ? `<dt>備註</dt><dd>${esc(c.note)}</dd>` : ""}
+        </dl>
+      </div>
+      <div class="actions">
+        <button class="btn primary" data-act="nav" ${hasPlace ? "" : "disabled"}>🧭 導航過去</button>
+        <button class="btn" data-act="map" ${hasPlace ? "" : "disabled"}>🗺 看地圖</button>
+        ${c.phone ? `<button class="btn" data-act="call">📞 打電話</button>` : ""}
+        <button class="btn ${c.phone ? "" : "solo"}" data-act="here">📌 記下目前位置</button>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>藏品 ${its.length ? `<span class="muted tiny">${its.length} 件</span>` : ""}</h2>
+      ${sum > 0 ? `<span class="price tiny">開價合計 ${esc(money(sum))}</span>` : ""}
+    </div>
+    ${grid}
+    <button class="fab" data-act="new-item">＋ 拍照記一筆</button>`;
+}
+
+/* ---------- 藏品頁 ---------- */
+function itemHTML(it){
+  const st = statusOf(it.status);
+  const photos = it.photos || [];
+  const blocks = photos.length ? photos.map((p, idx) => `
+    <div class="photo-block">
+      <img data-photo="${p.id}" data-act="zoom" data-pid="${p.id}"
+           alt="${esc(it.name)} 第 ${idx + 1} 張">
+      <div class="photo-note">
+        <span class="tiny muted" style="min-width:2.4em">#${idx + 1}</span>
+        <span class="txt ${p.note ? "filled" : ""}">${p.note ? esc(p.note) : "這張照片還沒有備註"}</span>
+        <button class="linkbtn" data-act="photo-note" data-pid="${p.id}">
+          ${p.note ? "改備註" : "＋ 備註"}</button>
+        <button class="linkbtn" data-act="photo-del" data-pid="${p.id}"
+                style="color:var(--danger)">刪</button>
+      </div>
+    </div>`).join("") : `
+    <div class="card empty">
+      <div class="mark">📷</div>
+      <div><b>還沒有照片</b></div>
+      <div class="tiny">每一張都可以單獨寫備註，例如「背面這條裂」</div>
+    </div>`;
+
+  return `
+    <section class="card">
+      <div class="pricebar">
+        <span class="price">${esc(money(it.price))}</span>
+        <span class="pill ${st.cls}">${st.label}</span>
+      </div>
+      <div class="big-note">${it.note ? esc(it.note) : `<span class="muted">還沒有整體備註</span>`}</div>
+    </section>
+
+    <div class="section-title">
+      <h2>照片 ${photos.length ? `<span class="muted tiny">${photos.length} 張</span>` : ""}</h2>
+      <span class="tiny muted">點照片可放大</span>
+    </div>
+    <div class="stack">${blocks}</div>
+
+    <div class="stack">
+      <button class="btn wide" data-act="add-photo">＋ 加照片</button>
+      <button class="btn wide danger" data-act="del-item">刪除這筆藏品</button>
+    </div>`;
+}
+
+/* ---------- 設定頁 ---------- */
+function settingsHTML(){
+  const demoCount = state.collectors.filter(c => c.demo).length
+                  + state.items.filter(i => i.demo).length;
+  const photos = state.items.reduce((s, i) => s + ((i.photos || []).length), 0);
+  return `
+    <div class="stats">
+      <div><b>${state.collectors.length}</b><span>藏家</span></div>
+      <div><b>${state.items.length}</b><span>藏品</span></div>
+      <div><b>${photos}</b><span>照片</span></div>
+    </div>
+
+    <section class="card" style="padding:18px">
+      <h2 style="font-size:18px">備份與還原</h2>
+      <p class="tiny muted" style="margin:8px 0 14px">
+        資料存在這支手機裡。換手機、或清掉瀏覽器資料前，先存一份備份檔（含照片）。</p>
+      <div class="stack">
+        <button class="btn wide primary" data-act="backup">⬇ 存一份備份檔</button>
+        <button class="btn wide" data-act="restore">⬆ 從備份檔還原</button>
+      </div>
+    </section>
+
+    <section class="card" style="padding:18px">
+      <h2 style="font-size:18px">放到手機桌面</h2>
+      <dl class="kv" style="margin-top:10px">
+        <dt>iPhone</dt><dd>用 Safari 開這一頁 → 下方分享鍵 → 「加入主畫面」</dd>
+        <dt>Android</dt><dd>用 Chrome 開這一頁 → 右上 ⋮ → 「加到主畫面」</dd>
+      </dl>
+      <p class="tiny muted" style="margin:12px 0 0">
+        加好之後，桌面就會多一個圖示，點下去直接開，不用再找網址。</p>
+    </section>
+
+    <section class="card" style="padding:18px">
+      <h2 style="font-size:18px">清理</h2>
+      <div class="stack" style="margin-top:12px">
+        ${demoCount ? `<button class="btn wide" data-act="del-demo">清掉示範資料（${demoCount} 筆）</button>` : ""}
+        <button class="btn wide danger" data-act="wipe">清空全部資料</button>
+      </div>
+    </section>`;
+}
+
+/* ---------- 照片載入 ---------- */
+async function hydratePhotos(){
+  const imgs = document.querySelectorAll("img[data-photo]");
+  for (const el of imgs) {
+    const id = el.dataset.photo;
+    if (photoCache.has(id)) { el.src = photoCache.get(id); continue; }
+    try {
+      const data = await idbGet("photos", id);
+      if (data) { photoCache.set(id, data); el.src = data; }
+    } catch (e) { /* 讀不到就留空圖 */ }
+  }
+}
+
+/* ===================== 對話框 ===================== */
+const layer = () => $("#layer");
+function closeLayer(){ layer().innerHTML = ""; }
+/* 換掉整個 layer 節點，舊對話框的監聽器才不會殘留下來誤關新視窗 */
+function freshLayer(){
+  const old = $("#layer"), n = document.createElement("div");
+  n.id = "layer"; old.replaceWith(n); return n;
+}
+
+function openModal(inner){
+  freshLayer().innerHTML = `<div class="scrim" data-scrim><div class="modal">${inner}</div></div>`;
+  const first = layer().querySelector("input,textarea,select");
+  if (first && first.type !== "file") setTimeout(() => first.focus(), 60);
+}
+
+function confirmBox({ title, body, ok = "確定", danger = false }){
+  return new Promise(res => {
+    openModal(`
+      <h2>${esc(title)}</h2>
+      ${body ? `<p class="muted" style="margin:0">${esc(body)}</p>` : ""}
+      <div class="modal-actions">
+        <button class="btn" data-x="no">取消</button>
+        <button class="btn ${danger ? "danger" : "primary"}" data-x="yes">${esc(ok)}</button>
+      </div>`);
+    layer().addEventListener("click", e => {
+      const b = e.target.closest("[data-x]");
+      if (!b) { if (e.target.hasAttribute("data-scrim")) { closeLayer(); res(false); } return; }
+      closeLayer(); res(b.dataset.x === "yes");
+    }, { once:false });
+  });
+}
+
+function textBox({ title, label, value = "", hint = "" }){
+  return new Promise(res => {
+    openModal(`
+      <h2>${esc(title)}</h2>
+      <div class="field">
+        <label for="tb">${esc(label)}</label>
+        <textarea id="tb" placeholder="例如：背面有一條裂，燈下才看得到">${esc(value)}</textarea>
+        ${hint ? `<span class="hint">${esc(hint)}</span>` : ""}
+      </div>
+      <div class="modal-actions">
+        <button class="btn" data-x="no">取消</button>
+        <button class="btn primary" data-x="yes">存起來</button>
+      </div>`);
+    layer().addEventListener("click", e => {
+      const b = e.target.closest("[data-x]");
+      if (!b) { if (e.target.hasAttribute("data-scrim")) { closeLayer(); res(null); } return; }
+      const v = layer().querySelector("#tb").value.trim();
+      closeLayer(); res(b.dataset.x === "yes" ? v : null);
+    });
+  });
+}
+
+/* 通用表單：fields = [{key,label,type,value,placeholder,hint,options}] */
+let pendingPhotos = [];
+function openForm({ title, fields, ok = "儲存", withPhotos = false }){
+  return new Promise(res => {
+    const body = fields.map(f => {
+      if (f.type === "chips") return `
+        <div class="field">
+          <label>${esc(f.label)}</label>
+          <div class="chips" data-chips="${f.key}">
+            ${f.options.map(o => `<button type="button" class="chip" data-v="${o.k}"
+               aria-pressed="${o.k === f.value}">${esc(o.label)}</button>`).join("")}
+          </div>
+        </div>`;
+      if (f.type === "textarea") return `
+        <div class="field">
+          <label for="f_${f.key}">${esc(f.label)}</label>
+          <textarea id="f_${f.key}" data-k="${f.key}"
+            placeholder="${esc(f.placeholder || "")}">${esc(f.value || "")}</textarea>
+          ${f.hint ? `<span class="hint">${esc(f.hint)}</span>` : ""}
+        </div>`;
+      return `
+        <div class="field">
+          <label for="f_${f.key}">${esc(f.label)}</label>
+          <input id="f_${f.key}" data-k="${f.key}" type="${f.type || "text"}"
+            ${f.type === "number" ? 'inputmode="numeric"' : ""}
+            value="${esc(f.value ?? "")}" placeholder="${esc(f.placeholder || "")}">
+          ${f.hint ? `<span class="hint">${esc(f.hint)}</span>` : ""}
+        </div>`;
+    }).join("");
+
+    const photoRow = withPhotos ? `
+      <div class="field">
+        <label>照片</label>
+        <div class="igrid" id="pending" style="grid-template-columns:repeat(auto-fill,minmax(90px,1fr))"></div>
+        <button type="button" class="btn" data-x="pick">📷 選照片 / 拍照</button>
+        <span class="hint">存好之後，每一張都還可以單獨寫備註。</span>
+      </div>` : "";
+
+    openModal(`
+      <h2>${esc(title)}</h2>
+      ${body}
+      ${photoRow}
+      <div class="modal-actions">
+        <button class="btn" data-x="no">取消</button>
+        <button class="btn primary" data-x="yes">${esc(ok)}</button>
+      </div>`);
+
+    if (withPhotos) { pendingPhotos = []; renderPending(); }
+
+    layer().addEventListener("click", e => {
+      const chip = e.target.closest(".chip");
+      if (chip) {
+        chip.parentElement.querySelectorAll(".chip")
+          .forEach(c => c.setAttribute("aria-pressed", String(c === chip)));
+        return;
+      }
+      const rm = e.target.closest("[data-rm]");
+      if (rm) { pendingPhotos.splice(+rm.dataset.rm, 1); renderPending(); return; }
+      const b = e.target.closest("[data-x]");
+      if (!b) { if (e.target.hasAttribute("data-scrim")) { closeLayer(); res(null); } return; }
+      if (b.dataset.x === "pick") { pickerMode = "pending"; $("#picker").click(); return; }
+      if (b.dataset.x === "no") { closeLayer(); res(null); return; }
+      const out = {};
+      layer().querySelectorAll("[data-k]").forEach(el => out[el.dataset.k] = el.value.trim());
+      layer().querySelectorAll("[data-chips]").forEach(g => {
+        const on = g.querySelector('.chip[aria-pressed="true"]');
+        out[g.dataset.chips] = on ? on.dataset.v : null;
+      });
+      closeLayer(); res(out);
+    });
+  });
+}
+function renderPending(){
+  const box = layer().querySelector("#pending");
+  if (!box) return;
+  box.innerHTML = pendingPhotos.map((d, i) => `
+    <div class="thumb" style="border-radius:10px; overflow:hidden; position:relative">
+      <img src="${d}" alt="待加入的照片 ${i + 1}">
+      <button type="button" data-rm="${i}" aria-label="移除這張"
+        style="position:absolute;top:5px;right:5px;width:28px;height:28px;border-radius:50%;
+               border:none;background:rgba(0,0,0,.6);color:#fff;font-size:15px;cursor:pointer">✕</button>
+    </div>`).join("");
+}
+
+/* ===================== 照片輸入 ===================== */
+let pickerMode = "pending";   // pending：表單暫存；append：加到現有藏品
+let appendTargetId = null;
+
+$("#picker").addEventListener("change", async e => {
+  const files = Array.from(e.target.files || []);
+  e.target.value = "";
+  if (!files.length) return;
+  const t = document.createElement("div");
+  t.className = "toast"; t.textContent = `照片處理中… (0/${files.length})`;
+  document.body.appendChild(t);
+  const done = [];
+  for (let i = 0; i < files.length; i++) {
+    try { done.push(await compress(files[i])); } catch (err) { /* 跳過壞檔 */ }
+    t.textContent = `照片處理中… (${i + 1}/${files.length})`;
+  }
+  t.remove();
+  if (!done.length) { toast("這些檔案讀不出來，請改選一般的照片"); return; }
+
+  if (pickerMode === "pending") { pendingPhotos.push(...done); renderPending(); return; }
+
+  const it = itemOf(appendTargetId);
+  if (!it) return;
+  it.photos = it.photos || [];
+  for (const d of done) {
+    const pid = uid();
+    await idbSet("photos", pid, d);
+    photoCache.set(pid, d);
+    it.photos.push({ id:pid, note:"" });
+  }
+  save(); render();
+  toast(done.length > 1 ? `加了 ${done.length} 張照片` : "照片加好了");
+});
+
+async function storePending(item){
+  item.photos = item.photos || [];
+  for (const d of pendingPhotos) {
+    const pid = uid();
+    await idbSet("photos", pid, d);
+    photoCache.set(pid, d);
+    item.photos.push({ id:pid, note:"" });
+  }
+  pendingPhotos = [];
+}
+
+/* ===================== 動作 ===================== */
+const COLLECTOR_FIELDS = c => ([
+  { key:"name",    label:"藏家名字（怎麼稱呼他）", value:c?.name || "",    placeholder:"例如：周老闆" },
+  { key:"place",   label:"地點名稱",               value:c?.place || "",   placeholder:"例如：埔里・老料行" },
+  { key:"address", label:"地址（導航用）",         value:c?.address || "", placeholder:"例如：南投縣埔里鎮中山路三段 100 號",
+    hint:"填得越完整，導航越準。也可以到藏家頁按「記下目前位置」。" },
+  { key:"phone",   label:"電話", type:"tel",       value:c?.phone || "",   placeholder:"例如：0912-345-678" },
+  { key:"note",    label:"備註", type:"textarea",  value:c?.note || "",    placeholder:"例如：週三公休，去之前先打電話" },
+]);
+const ITEM_FIELDS = i => ([
+  { key:"name",   label:"這是什麼",              value:i?.name || "",  placeholder:"例如：台灣肖楠瘤 花瓶料" },
+  { key:"price",  label:"他開價多少", type:"number", value:(i && i.price != null) ? i.price : "",
+    placeholder:"只填數字，例如 45000", hint:"還沒問價可以先留空。" },
+  { key:"status", label:"目前狀況", type:"chips", value:i?.status || "want", options:STATUS },
+  { key:"note",   label:"備註", type:"textarea",  value:i?.note || "",
+    placeholder:"例如：油線漂亮，底部有一條裂，可以再談" },
+]);
+
+async function newCollector(){
+  const v = await openForm({ title:"新增藏家", fields:COLLECTOR_FIELDS(null) });
+  if (!v) return;
+  if (!v.name) { toast("至少要填藏家名字"); return; }
+  const c = { id:uid(), name:v.name, place:v.place, address:v.address, phone:v.phone,
+              note:v.note, lat:null, lng:null, createdAt:Date.now() };
+  state.collectors.push(c); save();
+  go({ name:"collector", id:c.id });
+}
+async function editCollector(c){
+  const v = await openForm({ title:"編輯藏家", fields:COLLECTOR_FIELDS(c) });
+  if (!v) return;
+  if (!v.name) { toast("至少要填藏家名字"); return; }
+  Object.assign(c, { name:v.name, place:v.place, address:v.address, phone:v.phone, note:v.note });
+  delete c.demo; save(); render();
+}
+async function newItem(c){
+  const v = await openForm({ title:"新增藏品", fields:ITEM_FIELDS(null), withPhotos:true });
+  if (!v) { pendingPhotos = []; return; }
+  if (!v.name && !pendingPhotos.length) { toast("至少要填名稱或放一張照片"); return; }
+  const it = { id:uid(), collectorId:c.id, name:v.name || "未命名藏品",
+               price:v.price === "" ? null : Number(v.price),
+               status:v.status || "want", note:v.note, photos:[], createdAt:Date.now() };
+  await storePending(it);
+  state.items.push(it); save();
+  go({ name:"item", id:it.id });
+}
+async function editItem(it){
+  const v = await openForm({ title:"編輯藏品", fields:ITEM_FIELDS(it) });
+  if (!v) return;
+  Object.assign(it, { name:v.name || "未命名藏品",
+                      price:v.price === "" ? null : Number(v.price),
+                      status:v.status || "want", note:v.note });
+  delete it.demo; save(); render();
+}
+
+async function deleteItem(it){
+  const okay = await confirmBox({ title:`刪除「${it.name}」？`,
+    body:"這筆藏品和它的照片都會不見，沒辦法復原。", ok:"刪除", danger:true });
+  if (!okay) return;
+  for (const p of it.photos || []) { await idbDel("photos", p.id); photoCache.delete(p.id); }
+  state.items = state.items.filter(x => x.id !== it.id);
+  save();
+  go({ name:"collector", id:it.collectorId });
+}
+async function deleteCollector(c){
+  const its = itemsOf(c.id);
+  const okay = await confirmBox({ title:`刪除藏家「${c.name}」？`,
+    body:`連同底下 ${its.length} 件藏品和照片一起刪掉，沒辦法復原。`, ok:"刪除", danger:true });
+  if (!okay) return;
+  for (const it of its) for (const p of it.photos || []) {
+    await idbDel("photos", p.id); photoCache.delete(p.id);
+  }
+  state.items = state.items.filter(i => i.collectorId !== c.id);
+  state.collectors = state.collectors.filter(x => x.id !== c.id);
+  save();
+  go({ name:"home" });
+}
+
+function markHere(c){
+  if (!navigator.geolocation) { toast("這台裝置不能定位"); return; }
+  toast("定位中…");
+  navigator.geolocation.getCurrentPosition(
+    p => {
+      c.lat = +p.coords.latitude.toFixed(6);
+      c.lng = +p.coords.longitude.toFixed(6);
+      save(); render();
+      toast("位置記好了，之後導航會直接帶到這裡");
+    },
+    () => toast("定位失敗，請允許定位權限，或改用填地址"),
+    { enableHighAccuracy:true, timeout:12000 }
+  );
+}
+
+/* ---------- 備份 ---------- */
+async function useCap(name){
+  try {
+    if (window.claude && typeof window.claude.use === "function") return await window.claude.use(name);
+  } catch (e) {}
+  return null;
+}
+async function backup(){
+  toast("正在打包，照片多的話要等一下…");
+  let photos = {};
+  try { photos = await idbAllPhotos(); } catch (e) {}
+  const payload = { app:"cangjia-shouzha", version:1,
+                    exportedAt:new Date().toISOString(), state, photos };
+  const blob = new Blob([JSON.stringify(payload)], { type:"application/json" });
+  const name = "cangjia-backup-" + new Date().toISOString().slice(0, 10) + ".json";
+  const dl = await useCap("downloads");
+  if (dl) {
+    try { await dl.save({ filename:name, data:blob }); toast("備份存好了"); }
+    catch (err) { if (err && err.code === "declined") return; toast("備份沒有存成功，請再試一次"); }
+    return;
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 5000);
+  toast("備份已下載");
+}
+$("#restorer").addEventListener("change", async e => {
+  const f = (e.target.files || [])[0];
+  e.target.value = "";
+  if (!f) return;
+  let data;
+  try { data = JSON.parse(await f.text()); }
+  catch (err) { toast("這不是備份檔，請選 cangjia-backup 開頭的檔案"); return; }
+  if (!data || !data.state || !Array.isArray(data.state.collectors)) {
+    toast("這個備份檔看不懂，請換一個"); return;
+  }
+  const okay = await confirmBox({
+    title:"用備份檔覆蓋現在的資料？",
+    body:`備份裡有 ${data.state.collectors.length} 位藏家、${data.state.items.length} 件藏品。現在手機上的資料會被取代。`,
+    ok:"還原", danger:true });
+  if (!okay) return;
+  photoCache.clear();
+  for (const [k, v] of Object.entries(data.photos || {})) await idbSet("photos", k, v);
+  state = Object.assign({ collectors:[], items:[], hideTip:false }, data.state);
+  save(); go({ name:"home" });
+  toast("還原完成");
+});
+
+/* ===================== 事件 ===================== */
+document.addEventListener("click", async e => {
+  const el = e.target.closest("[data-act]");
+  if (!el || layer().contains(el)) return;
+  const act = el.dataset.act;
+  const c = route.name === "collector" ? collectorOf(route.id) : null;
+  const it = route.name === "item" ? itemOf(route.id) : null;
+
+  switch (act) {
+    case "back": {
+      if (route.name === "item" && it) go({ name:"collector", id:it.collectorId });
+      else go({ name:"home" });
+      break;
+    }
+    case "settings": go({ name:"settings" }); break;
+    case "hide-tip": state.hideTip = true; save(); render(); break;
+    case "open-collector": go({ name:"collector", id:el.dataset.id }); break;
+    case "open-item": go({ name:"item", id:el.dataset.id }); break;
+    case "new-collector": newCollector(); break;
+    case "edit-collector": if (c) editCollectorMenu(c); break;
+    case "new-item": if (c) newItem(c); break;
+    case "edit-item": if (it) editItem(it); break;
+    case "del-item": if (it) deleteItem(it); break;
+    case "nav": if (c) openUrl(mapNav(c)); break;
+    case "map": if (c) openUrl(mapView(c)); break;
+    case "call": if (c && c.phone) location.href = "tel:" + c.phone; break;
+    case "here": if (c) markHere(c); break;
+    case "add-photo": {
+      if (!it) break;
+      pickerMode = "append"; appendTargetId = it.id; $("#picker").click();
+      break;
+    }
+    case "zoom": {
+      let src = photoCache.get(el.dataset.pid);
+      if (!src) { try { src = await idbGet("photos", el.dataset.pid); } catch (err) {} }
+      if (!src) break;
+      const lay = freshLayer();
+      lay.innerHTML = `<div class="viewer" data-scrim>
+        <img src="${src}" alt="放大檢視">
+        <button class="close" aria-label="關閉">✕</button></div>`;
+      lay.addEventListener("click", () => closeLayer());
+      break;
+    }
+    case "photo-note": {
+      if (!it) break;
+      const p = (it.photos || []).find(x => x.id === el.dataset.pid);
+      if (!p) break;
+      const v = await textBox({ title:"這張照片的備註", label:"想記下什麼？", value:p.note || "" });
+      if (v === null) break;
+      p.note = v; save(); render();
+      break;
+    }
+    case "photo-del": {
+      if (!it) break;
+      const okay = await confirmBox({ title:"刪掉這張照片？", ok:"刪除", danger:true });
+      if (!okay) break;
+      await idbDel("photos", el.dataset.pid);
+      photoCache.delete(el.dataset.pid);
+      it.photos = it.photos.filter(x => x.id !== el.dataset.pid);
+      save(); render();
+      break;
+    }
+    case "backup": backup(); break;
+    case "restore": $("#restorer").click(); break;
+    case "del-demo": {
+      const okay = await confirmBox({ title:"清掉示範資料？",
+        body:"只會刪掉一開始附的示範藏家與藏品，你自己記的不會動。", ok:"清掉" });
+      if (!okay) break;
+      const gone = state.items.filter(i => i.demo);
+      for (const i of gone) for (const p of i.photos || []) await idbDel("photos", p.id);
+      state.items = state.items.filter(i => !i.demo);
+      state.collectors = state.collectors.filter(x => !x.demo);
+      save(); render(); toast("示範資料清掉了");
+      break;
+    }
+    case "wipe": {
+      const okay = await confirmBox({ title:"清空全部資料？",
+        body:"所有藏家、藏品、照片都會消失，沒辦法復原。建議先存一份備份檔。",
+        ok:"全部清空", danger:true });
+      if (!okay) break;
+      const d = await openDB();
+      await new Promise(r => {
+        const t = d.transaction(["kv", "photos"], "readwrite");
+        t.objectStore("kv").clear(); t.objectStore("photos").clear();
+        t.oncomplete = r; t.onerror = r;
+      });
+      photoCache.clear();
+      state = { collectors:[], items:[], hideTip:true };
+      save(); go({ name:"home" }); toast("已經清空");
+      break;
+    }
+  }
+});
+
+async function editCollectorMenu(c){
+  openModal(`
+    <h2>${esc(c.name)}</h2>
+    <div class="stack">
+      <button class="btn wide" data-m="edit">✎ 修改資料</button>
+      <button class="btn wide danger" data-m="del">刪除這位藏家</button>
+      <button class="btn wide ghost" data-m="close">取消</button>
+    </div>`);
+  layer().addEventListener("click", e => {
+    const b = e.target.closest("[data-m]");
+    if (!b) { if (e.target.hasAttribute("data-scrim")) closeLayer(); return; }
+    closeLayer();
+    if (b.dataset.m === "edit") editCollector(c);
+    if (b.dataset.m === "del") deleteCollector(c);
+  });
+}
+
+let qTimer = null;
+document.addEventListener("input", e => {
+  if (e.target.id !== "q") return;
+  query = e.target.value;
+  const pos = e.target.selectionStart;
+  clearTimeout(qTimer);
+  qTimer = setTimeout(() => {
+    render();
+    const n = $("#q");
+    if (n) { n.focus(); try { n.setSelectionRange(pos, pos); } catch (err) {} }
+  }, 220);
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && layer().firstChild) closeLayer();
+});
+
+/* ===================== 啟動 ===================== */
+load().then(() => {
+  render();
+  try { history.replaceState({ r:route }, ""); } catch (e) {}
+});
+})();
+</script>
+</body>
+</html>

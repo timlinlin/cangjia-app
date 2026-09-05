@@ -1,0 +1,16 @@
+{
+  "name": "藏家手札",
+  "short_name": "藏家手札",
+  "description": "木藝與玉石收藏的隨身筆記",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDF0E9",
+  "theme_color": "#EDF0E9",
+  "lang": "zh-Hant",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
