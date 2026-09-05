@@ -53,6 +53,7 @@
   --danger-soft:#F6E0DC;
   --amber:#9A6C18;
   --amber-soft:#F5E9CE;
+  --c-fb:#1B63C4; --c-line:#0A8F45; --c-xhs:#D42741; --c-dy:#3A3A42;
   --shadow-sm:0 1px 2px rgba(27,33,28,.07);
   --shadow-md:0 2px 6px rgba(27,33,28,.07), 0 14px 30px rgba(27,33,28,.07);
   --r-s:10px; --r-m:14px; --r-l:20px;
@@ -98,6 +99,7 @@
     --danger-soft:#3C231E;
     --amber:#D9AE5E;
     --amber-soft:#382E19;
+    --c-fb:#6FAAF5; --c-line:#4FD693; --c-xhs:#FF7488; --c-dy:#C6C9D2;
     --shadow-sm:0 1px 2px rgba(0,0,0,.4);
     --shadow-md:0 2px 6px rgba(0,0,0,.35), 0 14px 30px rgba(0,0,0,.4);
   }
@@ -125,6 +127,7 @@
   --wood:#D6A066; --wood-soft:#3A2C1D;
   --danger:#E28275; --danger-soft:#3C231E;
   --amber:#D9AE5E; --amber-soft:#382E19;
+  --c-fb:#6FAAF5; --c-line:#4FD693; --c-xhs:#FF7488; --c-dy:#C6C9D2;
   --shadow-sm:0 1px 2px rgba(0,0,0,.4);
   --shadow-md:0 2px 6px rgba(0,0,0,.35), 0 14px 30px rgba(0,0,0,.4);
 }
@@ -259,6 +262,21 @@ select:focus-visible,.tap:focus-visible{outline:3px solid var(--jade); outline-o
 .actions{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:0 18px 18px}
 .actions .btn{padding:0 12px}
 .actions .btn.solo{grid-column:1 / -1}
+/* 藏家的帳號連結：只用顏色和名稱區分，不用平台商標 */
+.social{display:flex; flex-wrap:wrap; gap:9px; padding:0 18px 18px}
+.social button{
+  display:inline-flex; align-items:center; gap:7px;
+  min-height:46px; padding:0 15px; border-radius:999px; cursor:pointer;
+  background:var(--surface-2); border:1px solid currentColor; font-size:15px;
+  font-weight:500; box-shadow:none;
+}
+.social button::before{
+  content:""; width:9px; height:9px; border-radius:50%; background:currentColor; flex:none;
+}
+.social button:active{transform:translateY(1px)}
+.social .s-fb{color:var(--c-fb)} .social .s-line{color:var(--c-line)}
+.social .s-xhs{color:var(--c-xhs)} .social .s-dy{color:var(--c-dy)}
+.social .cap{color:var(--ink)}
 .section-title{display:flex; align-items:baseline; justify-content:space-between; gap:12px;
                padding:0 2px}
 .section-title h2{font-size:18px; font-weight:700}
@@ -455,9 +473,11 @@ function demoData(){
     collectors: [
       { id:c1, demo:true, name:"周老闆", place:"埔里・老料行",
         address:"南投縣埔里鎮中山路三段", phone:"", note:"週三公休。倉庫在後面，要先打電話。",
+        fb:"", line:"woodzhou-demo", xhs:"", dy:"",
         lat:null, lng:null, createdAt:Date.now() },
       { id:c2, demo:true, name:"林師傅", place:"建國玉市 3 號攤",
         address:"台北市大安區建國南路二段", phone:"", note:"只有週六日擺攤，早上九點到中午人最少。",
+        fb:"", line:"jade-lin-demo", xhs:"和田玉小林", dy:"",
         lat:null, lng:null, createdAt:Date.now() },
     ],
     items: [
@@ -521,6 +541,27 @@ function compress(file){
     img.onerror = () => { URL.revokeObjectURL(url); rej(new Error("bad image")); };
     img.src = url;
   });
+}
+
+/* 藏家的社群帳號。使用者貼網址就直接用，只填帳號名就照各平台規則組。 */
+const SOCIAL = [
+  { key:"fb", label:"Facebook", ph:"貼粉專網址，或帳號名稱",
+    make:v => "https://www.facebook.com/" +
+      (/^[A-Za-z0-9.]+$/.test(v) ? v : "search/top?q=" + encodeURIComponent(v)) },
+  { key:"line", label:"LINE", ph:"LINE ID，或加好友連結",
+    make:v => v.charAt(0) === "@"
+      ? "https://line.me/R/ti/p/" + encodeURIComponent(v)
+      : "https://line.me/ti/p/~" + encodeURIComponent(v) },
+  { key:"xhs", label:"小紅書", ph:"貼分享連結，或小紅書暱稱",
+    make:v => "https://www.xiaohongshu.com/search_result?keyword=" + encodeURIComponent(v) },
+  { key:"dy", label:"抖音", ph:"貼分享連結，或抖音暱稱",
+    make:v => "https://www.douyin.com/search/" + encodeURIComponent(v) },
+];
+function socialUrl(sp, raw){
+  const v = (raw || "").trim();
+  if (!v) return "";
+  const u = /^https?:\/\//i.test(v) ? v : sp.make(v);
+  return /^https?:\/\//i.test(u) ? u : "";   // 只放行 http(s)
 }
 
 /* Google 地圖：導航與查看，都不需要金鑰 */
@@ -663,6 +704,9 @@ function collectorHTML(c){
   const its = itemsOf(c.id).sort((a, b) => b.createdAt - a.createdAt);
   const sum = its.filter(i => Number(i.price) > 0).reduce((s, i) => s + Number(i.price), 0);
   const hasPlace = !!(c.address || c.place || c.name);
+  const links = SOCIAL
+    .map(sp => ({ key:sp.key, label:sp.label, url:socialUrl(sp, c[sp.key]) }))
+    .filter(l => l.url);
 
   const grid = its.length ? `<div class="igrid">${its.map(i => {
     const st = statusOf(i.status), first = i.photos && i.photos[0];
@@ -706,6 +750,11 @@ function collectorHTML(c){
         ${c.phone ? `<button class="btn" data-act="call">📞 打電話</button>` : ""}
         <button class="btn ${c.phone ? "" : "solo"}" data-act="here">📌 記下目前位置</button>
       </div>
+      ${links.length ? `<div class="social">
+        <span class="cap tiny muted" style="align-self:center">帳號</span>
+        ${links.map(l => `<button class="s-${l.key}" data-act="social"
+           data-url="${esc(l.url)}">${esc(l.label)}</button>`).join("")}
+      </div>` : ""}
     </section>
 
     <div class="section-title">
@@ -873,6 +922,8 @@ let pendingPhotos = [];
 function openForm({ title, fields, ok = "儲存", withPhotos = false }){
   return new Promise(res => {
     const body = fields.map(f => {
+      if (f.type === "section") return `
+        <div class="eyebrow" style="margin:6px 0 -6px">${esc(f.label)}</div>`;
       if (f.type === "chips") return `
         <div class="field">
           <label>${esc(f.label)}</label>
@@ -1004,6 +1055,10 @@ const COLLECTOR_FIELDS = c => ([
   { key:"address", label:"地址（導航用）",         value:c?.address || "", placeholder:"例如：南投縣埔里鎮中山路三段 100 號",
     hint:"填得越完整，導航越準。也可以到藏家頁按「記下目前位置」。" },
   { key:"phone",   label:"電話", type:"tel",       value:c?.phone || "",   placeholder:"例如：0912-345-678" },
+  { type:"section", label:"帳號（選填，貼網址或直接填帳號都可以）" },
+  ...SOCIAL.map(sp => ({ key:sp.key, label:sp.label, value:c?.[sp.key] || "",
+                         placeholder:sp.ph })),
+  { type:"section", label:"其他" },
   { key:"note",    label:"備註", type:"textarea",  value:c?.note || "",    placeholder:"例如：週三公休，去之前先打電話" },
 ]);
 const ITEM_FIELDS = i => ([
@@ -1021,6 +1076,7 @@ async function newCollector(){
   if (!v.name) { toast("至少要填藏家名字"); return; }
   const c = { id:uid(), name:v.name, place:v.place, address:v.address, phone:v.phone,
               note:v.note, lat:null, lng:null, createdAt:Date.now() };
+  SOCIAL.forEach(sp => c[sp.key] = v[sp.key] || "");
   state.collectors.push(c); save();
   go({ name:"collector", id:c.id });
 }
@@ -1029,6 +1085,7 @@ async function editCollector(c){
   if (!v) return;
   if (!v.name) { toast("至少要填藏家名字"); return; }
   Object.assign(c, { name:v.name, place:v.place, address:v.address, phone:v.phone, note:v.note });
+  SOCIAL.forEach(sp => c[sp.key] = v[sp.key] || "");
   delete c.demo; save(); render();
 }
 async function newItem(c){
@@ -1165,6 +1222,7 @@ document.addEventListener("click", async e => {
     case "map": if (c) openUrl(mapView(c)); break;
     case "call": if (c && c.phone) location.href = "tel:" + c.phone; break;
     case "here": if (c) markHere(c); break;
+    case "social": openUrl(el.dataset.url); break;
     case "add-photo": {
       if (!it) break;
       pickerMode = "append"; appendTargetId = it.id; $("#picker").click();
